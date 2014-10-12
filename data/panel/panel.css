@@ -1,0 +1,12 @@
+html, body {
+    margin: 0;
+    direction: rtl;
+}
+
+#home {
+    color: orange;
+}
+
+.button-action {
+    /*color: red;*/
+}
