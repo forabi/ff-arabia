@@ -9,7 +9,7 @@ var highlightCode = function() {
     console.debug("[arabion] Highlighting code...");
     
     var codeBlocks = document.querySelectorAll(".post_content pre code, .post_comment pre code");
-    for (codeBlock of codeBlocks) {
+    for (var codeBlock of codeBlocks) {
         hljs.highlightBlock(codeBlock);
     }
 }

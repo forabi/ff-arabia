@@ -9,7 +9,7 @@ var currentState = STATES.IDLE;
 const xmlParser = new DOMParser();
 
 function visitHome() {
-    // Stuff
+    self.port.emit("homePageRequested");
 }
 
 function triggerUpdate() {
@@ -22,7 +22,7 @@ function triggerUpdate() {
 function renderUpdate(xmlString) {
     var items = [];
     xmlDoc = xmlParser.parseFromString(xmlString, "text/xml");
-    for (item of xmlDoc.querySelectorAll("item")) {
+    for (var item of xmlDoc.querySelectorAll("item")) {
         items.push({
             title: item.querySelector('title').textContent,
             description: item.querySelector('description').textContent
