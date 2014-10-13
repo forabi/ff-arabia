@@ -1,12 +1,106 @@
+@import '../packages/ff-arabia/styles.css';
+
+:root {
+    --header-height: 45px;
+    --post-title-font-family: "Trebuchet MS", Helvetica, sans-serif;
+    --post-title-font-size: 22px;
+    --post-description-font-size: 14px;
+    --post-description-font-family: Tahoma;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 html, body {
-    margin: 0;
     direction: rtl;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    color: var(color);
+    -moz-user-select: -moz-none;
+}
+/*
+body {
+    display: flex;
+    flex-direction: column;
+}*/
+
+.button-action {
+    /*color: red;*/
+}
+
+#header {
+    height: var(--header-height);
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    border-bottom: 1px solid lightgray;
+}
+
+#header-buttons {
+    display: flex;
+    align-items: center;
+}
+
+#header .icon {
+    height: 18px;
+    font-size: 18px;
+}
+
+#home, #home h1, #logo {
+    margin: 0;
 }
 
 #home {
     color: orange;
+    flex-grow: 1;
 }
 
-.button-action {
-    /*color: red;*/
+#logo {
+    height: 90%;
+    width: auto;
+}
+
+a {
+    color: #27A1C5;
+    text-decoration: none;
+}
+
+#content {
+    overflow-y: scroll;
+    flex-grow: 1;
+    background: white;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    height: calc(100% - var(--header-height));
+    height: calc(100% - var(--header-height));
+}
+
+.post {
+    margin: 0px 5px;
+}
+
+.post-title {
+    max-width: 100%;
+    width: 100%;
+    /*text-overflow: ellipsis;*/
+    /*white-space: nowrap;*/
+    font-size: var(--post-title-font-size);
+    font-family: var(--post-title-font-family);
+}
+
+.post-description {
+    font-size: var(--post-description-font-size);
+    font-family: var(--post-description-font-familty)
+}
+
+.spinning {
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    to { transform: rotate(1turn); }
 }
