@@ -23,3 +23,8 @@
 .post_content pre code, .post_comment pre code {
     font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
+
+.embed {
+    max-width: 100%;
+    width: auto;
+}
