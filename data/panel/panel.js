@@ -14,11 +14,11 @@ function visitHome() {
     self.port.emit("homePageRequested");
 }
 
-function triggerUpdate() {
+function triggerUpdate(feedId) {
     if (currentState != STATES.UPDATING) {
         refreshButton.classList.add('spinning');
         currentState = STATES.UPDATING;
-        self.port.emit("updateRequested");
+        self.port.emit("updateRequested", feedId);
     }
 }
 
