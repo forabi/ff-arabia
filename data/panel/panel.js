@@ -43,9 +43,16 @@ function renderUpdate(xmlString) {
                 <span class='post-date'>" + item.date.toLocaleString() + "</span>\
                 <span class='post-description'>"+ item.description + "</span>\
             </div>";
+
+        div.querySelector('h2 a').onclick = function(e) {
+            e.preventDefault();
+            self.port.emit('tabRequested', item.link);
+        }
+
         fragment.appendChild(div);
     });
 
+    content.textContent = ''; // @TODO
     content.insertBefore(fragment, content.childNodes[0]);
     refreshButton.classList.remove('spinning');
     currentState = STATES.IDLE;
